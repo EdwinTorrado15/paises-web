@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import * as homeServices from "../services/home.services";
 import { Colombia } from "../interface/home.interface";
+import { Link } from "react-router-dom";
+import * as homeServices from "../services/home.services";
+import { Button } from "@nextui-org/react";
 
 const Home = () => {
   const [colombia, setColombia] = useState({} as Colombia);
@@ -29,6 +31,11 @@ const Home = () => {
           alt={colombia.name}
           className="h-56 w-h-56"
         />
+        <Link to="/regions">
+          <Button className="mt-2" color="primary">
+            Show regions
+          </Button>
+        </Link>
         <div className="m-3 space-y-2">
           <h2 className="text-2xl font-bold text-gray-800">
             Country Information
